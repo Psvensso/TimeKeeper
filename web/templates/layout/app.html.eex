@@ -15,7 +15,7 @@
     <div class="container" role="main">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          
+
         </ul>
         <span class="logo"></span>
       </div>
@@ -26,6 +26,15 @@
       <%= @inner %>
 
     </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="<%= static_path(@conn, "/jspm_packages/system.js") %>"></script>
+    <script src="<%= static_path(@conn, "/config.js") %>"></script>
+  <script>
+    System.config({
+      "paths": {
+        "*": "js/*.js"
+      }
+    });
+    System.import('app');
+  </script>
   </body>
 </html>

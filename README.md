@@ -1,5 +1,5 @@
-# TimeKeeper PhoenixFramework demo app
-
+# TimeKeeper demo app
+Buildt with Phoenixframework
 Requires Elixir installed and Postgres with u/p: postgres/postgres
 
 To start the app:
@@ -10,7 +10,7 @@ To start the app:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-## Learn more
+## Phoenixframework links
 
   * Official website: http://www.phoenixframework.org/
   * Guides: http://phoenixframework.org/docs/overview

@@ -1,7 +1,7 @@
 defmodule TimeKeeper.Endpoint do
   use Phoenix.Endpoint, otp_app: :time_keeper
 
-  
+
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -9,7 +9,7 @@ defmodule TimeKeeper.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/", from: :time_keeper, gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images js favicon.ico robots.txt jspm_packages config.js)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
