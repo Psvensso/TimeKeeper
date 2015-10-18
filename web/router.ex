@@ -17,6 +17,7 @@ defmodule TimeKeeper.Router do
   scope "/", TimeKeeper do
     pipe_through :browser # Use the default browser stack
     get "/", PageController, :index
+    get "/profile", ProfileController, :index
   end
 
   # Other scopes may use custom stacks.

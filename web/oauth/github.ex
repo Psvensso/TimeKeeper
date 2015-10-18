@@ -11,9 +11,9 @@ defmodule GitHub do
   def client do
     OAuth2.Client.new([
       strategy: __MODULE__,
-      client_id: "643c13bc853ceb0718c4",
-      client_secret: "8b5b342fb1baea2c110bb346861088363c2235c5",
-      redirect_uri: "http://lvh.me:4000/auth/github/callback",
+      client_id: System.get_env("TIMEKEEPER_CLIENT_ID"),
+      client_secret: System.get_env("TIMEKEEPER_CLIENT_SECRET"),
+      redirect_uri: System.get_env("TIMEKEEPER_REDIRECT_URI"),
       site: "https://api.github.com",
       authorize_url: "https://github.com/login/oauth/authorize",
       token_url: "https://github.com/login/oauth/access_token"
