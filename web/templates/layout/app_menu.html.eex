@@ -1,0 +1,41 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse top_menu">
+	<ul class="nav navbar-nav pull-right">
+		<li class="nav-item active">
+			<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Features</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Pricing</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">About</a>
+		</li>
+		<%= if @current_user do %>
+
+		<li class="nav-item">
+			<img src="<%= @current_user["avatar_url"] %>" class="img-circle profile_picture pull-left"/>
+			<a class="nav-link pull-right" href="/profile"><%= @current_user["name"] %></a>
+		</li>
+		<div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</div>
+			<% else %>
+			<a class="btn btn-primary btn-lg" href="<%= auth_path @conn, :index, "github" %>">
+				<i class="fa fa-github"></i>
+				Sign in with GitHub
+			</a>
+
+		<% end %>
+	</ul>
+</nav>

@@ -1,1 +1,2 @@
-import {meow} from "app2";
+import jQuery from "jquery";
+import "./bootstrap/dropdown";

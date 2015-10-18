@@ -14,7 +14,8 @@
   "main": "index.js",
   "directories": {
     "test": "test",
-    "packages": "priv\\static\\js\\jsjspm_packages"
+    "baseURL": "priv\\static",
+    "packages": "priv\\static\\js\\jspm_packages"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
@@ -32,12 +33,14 @@
   "license": "ISC",
   "jspm": {
     "directories": {
-      "lib": "web/static/js",
-      "packages": "priv/static/jspm_packages"
+      "baseURL": "priv/static",
+      "packages": "priv/static/js/jspm_packages",
+      "test": "test"
     },
-    "configFile": "priv/static/config.js",
+    "configFile": "priv/static/js/config.js",
     "dependencies": {
-      "bootstrap": "github:twbs/bootstrap@^3.3.5"
+      "jquery": "github:components/jquery@^2.1.4",
+      "scss": "github:theefer/plugin-sass@master"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.6.4",
