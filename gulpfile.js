@@ -17,7 +17,7 @@ function reportChange(event){
 }
 
 gulp.task('build-sass', function() {
-  gulp.src(cssSrc)
+  gulp.src([cssSrc, '!web/static/css/bootstrap/**/*'])
 			.pipe(sourcemaps.init())
       .pipe(sass())
       .pipe(concat('app.css'))
@@ -26,11 +26,8 @@ gulp.task('build-sass', function() {
 });
 
 gulp.task('build-js', function() {
-  gulp.src(jsSrc)
-      .pipe(plumber())
-      .pipe(sourcemaps.init())
-      .pipe(babel({sourceMap: true, modules:'system'}))
-      .pipe(sourcemaps.write())
+    console.log("Building js");
+      gulp.src(jsSrc)
       .pipe(gulp.dest(jsDest));
 });
 
@@ -42,7 +39,9 @@ gulp.task('copy-assets', function(){
 gulp.task('build', ['copy-assets','build-js', 'build-sass']);
 
 gulp.task('watch', ['build'], function() {
-  gulp.watch([jsSrc, cssSrc], ['build']).on('change', reportChange);
+  gulp.watch([cssSrc], ['build-sass']).on('change', reportChange);
+  gulp.watch(jsSrc, ['build-js']).on('change', reportChange);
+  gulp.watch(assetsDest, ['copy-assets']).on('change', reportChange);
 });
 
 

@@ -17,3 +17,27 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
   * Docs: http://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
+## To do
+  * SAdmin page
+    - User > SAdmin portal
+    - Add/edit customers etc
+    - Print reports
+    - Execute salary calculations
+    - Approve additional timesheets
+    - Register users
+    
+  * Customer admin page
+    - User > manage your stuff
+    - Approve additional timesheets
+
+  * Profile
+    - Alter personal info
+    - See registred hours
+    - Add manual timesheets
+
+  * Logg
+
+  * Workplace page
+    - IP blocks (setting)
+    - Stamp page (guid, rfid usage) (setting)

@@ -2,8 +2,13 @@
 /* Space out content a bit */
 body {
   background-color: rgb(40,44,52);
-  color: rgb(157,165,180)
+  color: rgb(157,165,180);
+  padding-top: 70px;
 }
 
 /* Phoenix flash messages */
 .alert:empty { display: none; }
+.text-btn {
+  background: none;
+  color: inherit;
+}
