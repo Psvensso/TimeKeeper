@@ -1,0 +1,12 @@
+<h2>Register profile</h2>
+<p>Oups! You seem to have logged in from
+<%= @provider_user["provider"] %> but you don´t have a profile.<br>
+Lets hook you up right away.
+  <small>Or <a href="/profile/logout">logout</a> and come back another day.</small>
+</p>
+
+
+<p>We have pre-filled out what we could from your <%= @provider_user["provider"] %> login.</p>
+<%= render "form.html", changeset: @changeset,
+                        action: profile_path(@conn, :create) %>
+<%= link "Back", to: profile_path(@conn, :index) %>

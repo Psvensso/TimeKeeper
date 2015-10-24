@@ -1,14 +1,15 @@
-defmodule TimeKeeper.Person do
+defmodule TimeKeeper.Profile do
   use TimeKeeper.Web, :model
 
-  schema "persons" do
-    field :firstName, :string
-    field :lastName, :string
-
+  schema "profiles" do
+    field :first_name, :string
+    field :last_name, :string
+    field :email, :string
+    field :github_id, :integer
     timestamps
   end
 
-  @required_fields ~w(firstName lastName)
+  @required_fields ~w(first_name last_name email)
   @optional_fields ~w()
 
   @doc """

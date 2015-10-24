@@ -21,7 +21,6 @@ defmodule GitHub do
   end
 
   def authorize_url!(params \\ []) do
-		IO.puts System.get_env("TIMEKEEPER_REDIRECT_URI")
     OAuth2.Client.authorize_url!(client(), params)
   end
 
@@ -30,7 +29,6 @@ defmodule GitHub do
   end
 
   # Strategy Callbacks
-
   def authorize_url(client, params) do
     AuthCode.authorize_url(client, params)
   end

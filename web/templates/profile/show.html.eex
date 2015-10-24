@@ -1,0 +1,23 @@
+<h2>Show profile</h2>
+
+<ul>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @profile.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @profile.last_name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @profile.email %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: profile_path(@conn, :edit, @profile) %>
+<%= link "Back", to: profile_path(@conn, :index) %>
