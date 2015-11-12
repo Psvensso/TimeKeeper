@@ -1,7 +1,6 @@
 defmodule TimeKeeper.Web do
   @moduledoc """
-  A module that keeps using definitions for controllers,
-  views and so on.
+  The timekeeper module is the main phoenix module.
 
   This can be used in your application as:
 
@@ -16,6 +15,9 @@ defmodule TimeKeeper.Web do
   below.
   """
 
+  @doc """
+  Allows me to do use use TimeKeeper.Web, :model
+  """
   def model do
     quote do
       use Ecto.Model
@@ -50,6 +52,7 @@ defmodule TimeKeeper.Web do
       import TimeKeeper.Router.Helpers
     end
   end
+
 
   def router do
     quote do

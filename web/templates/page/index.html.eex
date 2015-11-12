@@ -1,7 +1,9 @@
 <%= if !@conn.assigns[:current_user] do %>
-<div class="card card-block">
-  <h4 class="card-title">Card title</h4>
-  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  <a href="<%= auth_path @conn, :index, "github" %>" class="card-link"><i class="fa fa-github"></i> Sign in with GitHub</a>
-</div>
+<div id="mainApp"></div>
 <% end %>
+
+
+
+<script>
+	System.import('js/app');
+</script>

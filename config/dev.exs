@@ -12,13 +12,13 @@ config :time_keeper, TimeKeeper.Endpoint,
   code_reloader: true,
   cache_static_lookup: false,
   check_origin: false,
-  watchers: [node: ["node_modules/gulp/bin/gulp.js", "watch", "--stdin"]]
+  watchers: [node: ["gulpfile.js", "--stdin"]]
 
 # Watch static and templates for browser reloading.
 config :time_keeper, TimeKeeper.Endpoint,
   live_reload: [
     patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg|scss)$},
       ~r{web/views/.*(ex)$},
       ~r{web/templates/.*(eex)$}
     ]

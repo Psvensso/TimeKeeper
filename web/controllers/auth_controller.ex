@@ -10,6 +10,7 @@ defmodule TimeKeeper.AuthController do
   end
 
   def logout(conn, _) do
+    
     conn
     |> configure_session(drop: true)
     |> redirect(to: "/")

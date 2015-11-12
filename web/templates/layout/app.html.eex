@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>TimeKeeper Phoenix Demo app</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <title>TimeKeeper Phoenix Demo app</title>
+    <script src="<%= static_path(@conn, "/jspm_packages/system.js") %>"></script>
+    <script src="<%= static_path(@conn, "/config.js") %>"></script>
   </head>
 
   <body>
@@ -18,10 +19,7 @@
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= @inner %>
     </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/jspm_packages/system.js") %>"></script>
-    <script src="<%= static_path(@conn, "/js/config.js") %>"></script>
-  <script>
-    System.import('js/app');
-  </script>
+
+
   </body>
 </html>

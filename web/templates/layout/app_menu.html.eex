@@ -1,10 +1,13 @@
 <nav class="navbar navbar-fixed-top navbar-dark bg-inverse top_menu">
-	<ul class="nav navbar-nav pull-right">
-		<li class="nav-item active">
+	<ul class="nav navbar-nav">
+		<li class="nav-item">
 			<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
 		</li>
+	</ul>
+	<ul class="nav navbar-nav pull-right">
+
 		<%= if @conn.assigns[:current_user] do %>
-		<li class="nav-item">
+		<li class="nav-item pull-left">
 			<img src="<%= @current_user["avatar_url"] %>" class="img-circle profile_picture pull-left"/>
 		</li>
 		<div class="btn-group">
@@ -17,6 +20,11 @@
 				<a class="dropdown-item" href="/profile/logout">Logout</a>
 		  </div>
 		</div>
+		<% end %>
+		<%= if !@conn.assigns[:current_user] do %>
+		<li class="nav-item">
+			<a href="<%= auth_path @conn, :index, "github" %>" class="card-link"><i class="fa fa-github"></i> Sign in with GitHub</a>
+		</li>
 		<% end %>
 	</ul>
 </nav>
