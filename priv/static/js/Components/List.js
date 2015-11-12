@@ -13,7 +13,6 @@ export default class List extends React.Component {
 
     componentDidMount(){
         this.changes = ItemsStore.db.changes({
-            since: 'now',
             live: true,
             include_docs: true
         }).on('change', (change) => {
